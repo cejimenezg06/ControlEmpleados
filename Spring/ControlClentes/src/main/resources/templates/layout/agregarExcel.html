@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Agregar Excel</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="agregarExcel">
+            <div id="agregarExcel" class="modal fade">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title" th:text="#{accion.agregarExcel}">Agregar Archivo</h5>
+                            <button class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div> 
+
+                        <!--table-->
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>NIT</th>
+                                    <th>¿Modified?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SODIMAC</td>
+                                    <td>198479</td>
+                                    <td>Y</td>
+                                </tr>
+                                <tr>
+                                    <td>NICKI SAS</td>
+                                    <td>123874</td>
+                                    <td>N</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
