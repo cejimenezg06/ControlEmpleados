@@ -1,9 +1,11 @@
 package mx.com.gm.web;
 
+import java.io.IOException;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import mx.com.gm.domain.Persona;
 import mx.com.gm.servicio.PersonaService;
+import mx.com.gm.util.Excel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @Slf4j
 public class ControladorInicio {
+    
+    Excel objGenerarExcel = new Excel();
     
     @Autowired
     private PersonaService personaService;
@@ -38,6 +42,16 @@ public class ControladorInicio {
     @GetMapping("/agregar")
     public String agregar(Persona persona){
         return "modificar";
+    }
+    
+    @PostMapping("/generar")
+    public String generar() throws IOException{
+        /*if(errores.hasErrors()){
+            return "redirect:/";
+        }*/
+        objGenerarExcel.main();
+        
+        return "redirect:/";
     }
     
     @PostMapping("/guardar")

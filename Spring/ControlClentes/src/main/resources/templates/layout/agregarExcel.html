@@ -17,31 +17,19 @@
                                 <span>&times;</span>
                             </button>
                         </div> 
-
-                        <!--table-->
-                        <table class="table table-responsive table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>NIT</th>
-                                    <th>¿Modified?</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>SODIMAC</td>
-                                    <td>198479</td>
-                                    <td>Y</td>
-                                </tr>
-                                <tr>
-                                    <td>NICKI SAS</td>
-                                    <td>123874</td>
-                                    <td>N</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
+                        
+                        <div class="container text-center pt-3 mb-3 bg-light" >
+                            <div class="card-body">
+                                <h4 th:text="#{accion.aclaracion}" class="text-muted">Aclaracion</h4>
+                            </div>
+                        
+                        </div>                        
+                        
+                        <div class="modal-footer">  
+                            <form th:action="@{/generar}" method="POST" >
+                                <button class="btn btn-primary center-block" type="submit" th:text="#{accion.generar}">Generar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
